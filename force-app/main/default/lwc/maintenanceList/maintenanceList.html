@@ -1,0 +1,11 @@
+<template>
+  <lightning-card title="Recent Maintenance Requests" icon-name="standard:work_order">
+    <div class="slds-p-around_medium">
+      <template if:true={requests.length}>
+        <lightning-datatable key-field="Id" data={requests} columns={columns} hide-checkbox-column></lightning-datatable>
+      </template>
+      <template if:false={requests.length}><p class="slds-text-color_weak">No maintenance requests have been created yet.</p></template>
+      <template if:true={error}><p class="slds-text-color_error">{errorMessage}</p></template>
+    </div>
+  </lightning-card>
+</template>

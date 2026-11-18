@@ -1,0 +1,28 @@
+<template>
+  <lightning-card title="Rental Portfolio Overview" icon-name="standard:dashboard">
+    <div class="slds-p-around_medium">
+      <template if:true={data}>
+        <div class="slds-grid slds-wrap slds-gutters">
+          <template for:each={metrics} for:item="metric">
+            <div key={metric.label} class="slds-col slds-size_1-of-2 slds-large-size_1-of-4 slds-m-bottom_small">
+              <article class="metric">
+                <p class="metric-label">{metric.label}</p>
+                <p class="metric-value">{metric.value}</p>
+              </article>
+            </div>
+          </template>
+        </div>
+        <div class="slds-grid slds-wrap slds-gutters slds-m-top_small">
+          <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+            <article class="metric"><p class="metric-label">Monthly Rent Roll</p><p class="metric-value">{formattedRentRoll}</p></article>
+          </div>
+          <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+            <article class="metric"><p class="metric-label">Occupancy</p><p class="metric-value">{formattedOccupancy}</p></article>
+          </div>
+        </div>
+      </template>
+      <template if:true={error}><p class="slds-text-color_error">{errorMessage}</p></template>
+      <template if:true={isLoading}><lightning-spinner alternative-text="Loading dashboard"></lightning-spinner></template>
+    </div>
+  </lightning-card>
+</template>

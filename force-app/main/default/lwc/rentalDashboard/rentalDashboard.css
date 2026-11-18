@@ -1,0 +1,19 @@
+.metric {
+  background: #f7f9fc;
+  border: 1px solid #e5eaf1;
+  border-radius: .5rem;
+  padding: 1rem;
+  min-height: 6rem;
+}
+.metric-label {
+  color: #52606d;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .04rem;
+}
+.metric-value {
+  color: #16325c;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: .35rem;
+}
